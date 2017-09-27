@@ -27,7 +27,8 @@ install:
   - luarocks make
 
 script:
-  - luacheck $TRAVIS_BUILD_DIR/src
+  - luacheck $TRAVIS_BUILD_DIR/yarball
+  - luacheck $TRAVIS_BUILD_DIR/spec
   - busted
 
 after_success:
