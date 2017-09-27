@@ -1,0 +1,34 @@
+environment:
+  matrix:
+  - LUA: "lua 5.1"
+  - LUA: "lua 5.2"
+  - LUA: "lua 5.3"
+  - LUA: "luajit 2.0"
+  - LUA: "luajit 2.1"
+
+before_build:
+  - set PATH=C:\Python27\Scripts;%PATH% # Add directory containing 'pip' to PATH
+  - pip install hererocks
+  - hererocks env --%LUA% -rlatest
+  - call env\bin\activate
+  
+  - luarocks install luafilesystem
+  - luarocks install luacov
+  - luarocks install luacov-coveralls
+  - luarocks install busted
+
+build_script:
+  - luarocks make
+  - echo "Build"
+
+test_script:
+  - busted
+
+on_success:
+  - luacov-coveralls
+
+notifications:
+  - provider: Email
+    on_build_success: false
+    on_build_failure: false
+    on_build_status_changed: true

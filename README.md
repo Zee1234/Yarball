@@ -1,0 +1,1 @@
+A super simplified version of a tarball for Lua. Works with Luafilesystem and Love2D. More filesystem library support may come in the future.
