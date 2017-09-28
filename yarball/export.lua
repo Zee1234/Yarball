@@ -1,5 +1,5 @@
 local load = loadstring or load
-function escape(self)
+local function escape(self)
   return self:gsub('\\','\\\\'):gsub('"','\\"'):gsub('\r',''):gsub('\n','\\\\n')
 end
 
