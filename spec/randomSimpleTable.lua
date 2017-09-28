@@ -27,7 +27,7 @@ local function randomTable()
         tab[name] = {}
         fillRecursive(tab[name], depth+1)
       end
-      if ascend(total/250) then break; end
+      if ascend(total/100) then break; end
     until false
   end
 

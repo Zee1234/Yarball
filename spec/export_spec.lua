@@ -21,7 +21,7 @@ describe('`export`', function()
 
 
   it('Creates an identical (simple) table', function()
-    for _ = 1, 1000 do
+    for _ = 1, 100 do
       local inn = randomTable()
       local out
       local expo = export(inn)
