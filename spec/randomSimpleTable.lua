@@ -1,9 +1,9 @@
 local randomString = require 'spec.randomString'
-local function descend()
-  return math.random() < 0.5
+local function descend(x)
+  return math.random() < x
 end
-local function ascend()
-  return math.random() < 0.25
+local function ascend(x)
+  return math.random() < x
 end
 local function randomName()
   return randomString(math.random(5,20),'%w%p"\'')
@@ -15,18 +15,20 @@ end
 
 local function randomTable()
   local ret = {}
+  local total = 1
 
-  local function fillRecursive(tab)
-    local goUp = false
+  local function fillRecursive(tab, depth)
+    total = total + 1
+    depth = depth or 1
     repeat
       tab[randomName()] = randomContent()
-      if descend() then
+      if descend(0.5) then
         local name = randomName()
         tab[name] = {}
-        fillRecursive(tab[name])
+        fillRecursive(tab[name], depth+1)
       end
-      if ascend() then goUp = true end
-    until goUp
+      if ascend(total/250) then break; end
+    until false
   end
 
   fillRecursive(ret)
