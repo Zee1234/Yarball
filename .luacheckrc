@@ -1,7 +1,7 @@
 return {
   codes = true,
   std = 'max',
-  ignore = {
+  exclude_files = {
     'spec/dataDumper.lua',
     'spec/tableShow.lua'
   },
