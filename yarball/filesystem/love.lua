@@ -1,4 +1,4 @@
-local read = love.filesystem.read 
+local read = love.filesystem.read
 local write = love.filesystem.write
 local _iter = love.filesystem.getDirectoryItems
 local iterateDir = function(path)

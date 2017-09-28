@@ -17,7 +17,7 @@ local function randomTable()
   local ret = {}
 
   local function fillRecursive(tab)
-    goUp = false
+    local goUp = false
     repeat
       tab[randomName()] = randomContent()
       if descend() then

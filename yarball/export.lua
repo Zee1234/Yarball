@@ -1,5 +1,5 @@
 local load = loadstring or load
-function string.escape(self) 
+function escape(self)
   return self:gsub('\\','\\\\'):gsub('"','\\"'):gsub('\r',''):gsub('\n','\\\\n')
 end
 
@@ -15,10 +15,10 @@ local function _export(yarball)
       local t = type(value)
 
       if t == 'string' then
-        strings[#strings+1] = ('["%s"]="%s",'):format(key:escape(), value:escape())
+        strings[#strings+1] = ('["%s"]="%s",'):format(escape(key), escape(value))
       elseif t == 'table' then
         strings[#strings+1] = '["'
-        strings[#strings+1] = key:escape()
+        strings[#strings+1] = escape(key)
         strings[#strings+1] = '"]'
         strings[#strings+1] = '={'
         serialize(value)

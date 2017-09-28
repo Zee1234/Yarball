@@ -23,7 +23,7 @@ local function randomString(Length, CharSet)
   -- Length (number)
   -- CharSet (string, optional); e.g. %l%d for lower case letters and digits
 
-  local CharSet = CharSet or '.'
+  CharSet = CharSet or '.'
 
   if CharSet == '' then
     return ''

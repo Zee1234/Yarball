@@ -7,7 +7,6 @@ math.random()
 
 
 local randomTable = require 'spec.randomSimpleTable'
-local dataDump = require 'spec.dataDumper'
 
 local export = require 'yarball.export'
 
@@ -22,11 +21,10 @@ describe('`export`', function()
 
 
   it('Creates an identical (simple) table', function()
-    for i = 1, 1000 do
+    for _ = 1, 1000 do
       local inn = randomTable()
       local out
       local expo = export(inn)
-      --if i == 1 then print(dataDump(expo)) end
       assert.is_true(type(expo) == 'string')
       if loadstring then
         out = loadstring(expo)

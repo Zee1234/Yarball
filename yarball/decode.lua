@@ -14,7 +14,7 @@ local function decode(basePath, yarball)
       else
         error 'Invalid yarball supplied to decode. Some files may have been created!'
       end
-    end 
+    end
   end
 
   runner(basePath, yarball)

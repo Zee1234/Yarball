@@ -8,7 +8,6 @@ local ld = loadstring or load
 local thisname = 'lfs_spec.lua'
 local thispath = debug.getinfo(1).source:sub(2, -1*thisname:len()-1)
 local projectpath = thispath..'/..'
-print(projectpath)
 
 local cipath = os.getenv 'TRAVIS_BUILD_DIR' or os.getenv 'APPVEYOR_BUILD_FOLDER' or projectpath
 local copypath = cipath..'/../yarball_duplication_directory_yep'
@@ -36,7 +35,7 @@ describe('Encode', function()
   end)
 
   it('returns different outputs for different input', function()
-    assert.are_not.same(encode(projectpath..'/..'), encode(projectpath))    
+    assert.are_not.same(encode(projectpath..'/..'), encode(projectpath))
   end)
 end)
 
