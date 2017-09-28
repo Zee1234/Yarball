@@ -1,5 +1,5 @@
 return {
   include = {
-    'src/yarball';
+    'yarball/';
   };
 }
