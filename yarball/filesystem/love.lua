@@ -4,7 +4,7 @@ local _iter = love.filesystem.getDirectoryItems
 local iterateDir = function(path)
   local obj = {}
   for k, v in ipairs(_iter(path)) do
-    obj[v] = true
+    obj[v] = k
   end
   return pairs(obj)
 end
@@ -15,7 +15,7 @@ local type = function(path)
   local dir = _isDir(path)
   return { file = file, dir = dir}
 end
-local mkdir = love.filesystem.mkdir
+local mkdir = love.filesystem.createDirectory
 
 return {
   read = read,
