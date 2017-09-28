@@ -4,7 +4,7 @@ local _iter = love.filesystem.getDirectoryItems
 local iterateDir = function(path)
   local obj = {}
   for k, v in ipairs(_iter(path)) do
-    obj{v} = true
+    obj[v] = true
   end
   return pairs(obj)
 end
