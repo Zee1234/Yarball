@@ -17,6 +17,8 @@ build = {
     ["yarball"]        = "yarball/yarball.lua",
     ["yarball.encode"] = "yarball/encode.lua",
     ["yarball.decode"] = "yarball/decode.lua",
-    ["yarball.export"] = "yarball/export.lua"
+    ["yarball.export"] = "yarball/export.lua",
+    ["yarball.filesystem.lfs"] = "yarball/filesystem/lfs.lua",
+    ["yarball.filesystem.love"] = "yarball/filesystem/love.lua"
   }
 }

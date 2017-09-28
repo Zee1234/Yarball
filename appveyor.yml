@@ -17,7 +17,7 @@ before_build:
   - luarocks install busted
 
 build_script:
-  - luarocks make
+#  - luarocks make
   - echo "Build"
 
 test_script:
