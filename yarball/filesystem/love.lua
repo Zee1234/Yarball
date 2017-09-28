@@ -2,7 +2,11 @@ local read = love.filesystem.read
 local write = love.filesystem.write
 local _iter = love.filesystem.getDirectoryItems
 local iterateDir = function(path)
-  return pairs(_iter(path))
+  local obj = {}
+  for k, v in ipairs(_iter(path)) do
+    obj{v} = true
+  end
+  return pairs(obj)
 end
 local _isDir = love.filesystem.isDirectory
 local _isFile = love.filesystem.isFile

@@ -11,9 +11,8 @@ local function encode(basePath)
 
   local function runner(path)
     local container = {}
-    for a, b in iterateDir(path) do
+    for name in iterateDir(path) do
       repeat
-        local name = type(a) == 'string' and a or b -- different iteration results based on method used
         if name == '.' or name == '..' then break; end
         local fullpath = path..'/'..name
         local details = filetype(fullpath)
